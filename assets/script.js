@@ -14,3 +14,5 @@ WHEN I refresh the page
 THEN the saved events persist
 */
 
+var currentDate = moment().format("MMM Do YYYY, dddd");
+$('#currentDay').text(currentDate);
