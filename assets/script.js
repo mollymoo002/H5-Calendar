@@ -14,6 +14,7 @@ WHEN I refresh the page
 THEN the saved events persist
 */
 var currentDate = moment().format("MMM Do YYYY hh:mm");
+var currentHour = moment().format("hh");
 $("#currentDay").text(currentDate);
 
 var containerEl = $(".container");
@@ -22,23 +23,21 @@ function saveLocal(event) {
   event.preventDefault();
   var saveBtnEl = $(event.target);
   var userInput = saveBtnEl.siblings("textarea").val();
-  var numId = saveBtnEl.parent().siblings("p").attr("data-hour");
+  var numId = saveBtnEl.siblings("textarea").attr("data-hour");
+  console.log(numId);
   localStorage.setItem(numId, userInput);
   console.log(userInput);
 }
 
-function changeColor() {
-  var timeLabel = document.querySelector("p");
-  var timeEl = timeLabel.querySelector("data-hour");
-
-
+function keepDisplay() {
   for (i = 9; i < 18; i++) {
     localStorage.getItem(i);
-    $("#" + i).val();
-    
+    $("#" + i).val(localStorage.getItem(i));
   }
 }
-changeColor();
+keepDisplay();
+
+
 
 containerEl.on("click", ".saveBtn", saveLocal);
 
