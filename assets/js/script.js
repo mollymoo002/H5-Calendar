@@ -1,32 +1,15 @@
-/*
-GIVEN I am using a daily planner to create a schedule
-✅WHEN I open the planner
-✅THEN the current day is displayed at the top of the calendar
-✅WHEN I scroll down
-✅THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-✅WHEN I click into a timeblock
-✅THEN I can enter an event
-✅WHEN I click the save button for that timeblock
-✅THEN the text for that event is saved in local storage
-✅WHEN I refresh the page
-✅THEN the saved events persist
-*/
 var currentDate = moment().format("MMM Do YYYY H:mm");
 $("#currentDay").text(currentDate);
 var containerEl = $(".container");
 var calHourEl = parseInt(document.querySelector("id"));
 
-// changes the container of the time to past is beige, present is red, and future is green
+// changes the text area of the time to past is beige, present is red, and future is green
 function changeColor() {
-  // .inputField sets the location for "this", ".each" allows function to run through each container
+  // .text-box sets the location for "this", ".each" allows function to run through each container
   $(".text-box").each(function () {
-      // "H" format puts time in military hour
       var todayInTime = moment().format("H")
-      // "this" refers back to .inputfield, each input has a different id#, parseInt turns it into a number 
+      // parseInt turns the text box into a number 
       var hour = parseInt($(this).attr("id"))
-      // each class is connected to a different color
       if (hour < todayInTime) {
           $(this).addClass("past");
           $(this).removeClass("present");
@@ -44,7 +27,6 @@ function changeColor() {
       }
   })
 }
-
 changeColor();
 
 // this saves the text input and the time to local storage
@@ -56,6 +38,7 @@ function saveLocal(event) {
   localStorage.setItem(numId, userInput);
 }
 
+// this allows the user to keep their text in the fields even when they refresh the page
 function keepDisplay() {
   for (i = 9; i < 18; i++) {
     localStorage.getItem(i);
@@ -66,5 +49,5 @@ function keepDisplay() {
 keepDisplay();
 
 
-
+//when the save button is clicked, the saveLocal function runs which saves the input into local storage
 containerEl.on("click", ".saveBtn", saveLocal);

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -10,7 +10,6 @@ textarea {
   resize: none;
   color: #000000;
   border: 1px solid black;
-  padding: 10px;
   width: 90%;
 }
 
@@ -65,4 +64,8 @@ textarea {
   background-color: #06aed5;
   color: white;
   width: 10%;
+}
+
+.container {
+  font-family: 'Roboto Mono', monospace;
 }
