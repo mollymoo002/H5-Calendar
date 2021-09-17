@@ -15,23 +15,30 @@ THEN the saved events persist
 */
 var currentDate = moment().format("MMM Do YYYY hh:mm");
 $("#currentDay").text(currentDate);
-// var getCurrentTimeInt = parseInt(currentDate);
-// var hourContainer = document.getElementById("container")
-// var hourLabel = document.getElementById("dataHour");
 
-// if (hourLabel === getCurrentTimeInt) {
-//     hourContainer.attr("class", "present");
-// } else if (hourLabel < getCurrentTimeInt) {
-//     hourContainer.attr("class", "past");
-// } else {
-//     hourContainer.attr("class", "future");
-// }
 var containerEl = $(".container");
 
 function saveLocal(event) {
+  event.preventDefault();
   var saveBtnEl = $(event.target);
-  console.log(saveBtnEl.siblings().val());
+  var userInput = saveBtnEl.siblings("textarea").val();
+  var numId = saveBtnEl.parent().siblings("p").attr("data-hour");
+  localStorage.setItem(numId, userInput);
+  console.log(userInput);
 }
+
+function changeColor() {
+  var timeLabel = document.querySelector("p");
+  var timeEl = timeLabel.querySelector("data-hour");
+
+
+  for (i = 9; i < 18; i++) {
+    localStorage.getItem(i);
+    $("#" + i).val();
+    
+  }
+}
+changeColor();
 
 containerEl.on("click", ".saveBtn", saveLocal);
 
