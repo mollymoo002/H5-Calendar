@@ -13,6 +13,13 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 */
-
 var currentDate = moment().format("MMM Do YYYY, dddd");
 $('#currentDay').text(currentDate);
+
+function saveLocal () {
+    
+}
+
+
+document.getElementById("saveBtn").addEventListener("click", saveLocal);
+
