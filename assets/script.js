@@ -13,13 +13,27 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 */
-var currentDate = moment().format("MMM Do YYYY, dddd");
-$('#currentDay').text(currentDate);
+var currentDate = moment().format("MMM Do YYYY hh:mm");
+$("#currentDay").text(currentDate);
+// var getCurrentTimeInt = parseInt(currentDate);
+// var hourContainer = document.getElementById("container")
+// var hourLabel = document.getElementById("dataHour");
 
-function saveLocal () {
-    
+// if (hourLabel === getCurrentTimeInt) {
+//     hourContainer.attr("class", "present");
+// } else if (hourLabel < getCurrentTimeInt) {
+//     hourContainer.attr("class", "past");
+// } else {
+//     hourContainer.attr("class", "future");
+// }
+var containerEl = $(".container");
+
+function saveLocal(event) {
+  var saveBtnEl = $(event.target);
+  console.log(saveBtnEl.siblings().val());
 }
 
+containerEl.on("click", ".saveBtn", saveLocal);
 
-document.getElementById("saveBtn").addEventListener("click", saveLocal);
 
+//event delegation
