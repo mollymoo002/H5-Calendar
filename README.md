@@ -4,7 +4,7 @@ This is an web application anyone can use to plan their work day 9 - 5. The curr
 ## Usage
 Provide instructions and examples for use. Include screenshots as needed.
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-   ![alt text](assets/images/screenshot.png)
+   ![screenshot of the calendar app](assets/images/screenshot.png)
 ## Credits
 - Ask BCS has been a huge help in this project
 - The tutoring team
