@@ -66,8 +66,3 @@ textarea {
   color: white;
   width: 10%;
 }
-
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
-}
