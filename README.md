@@ -4,6 +4,8 @@ This is an web application anyone can use to plan their work day 9 - 5. The curr
 ## Usage
 Provide instructions and examples for use. Include screenshots as needed.
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+- https://github.com/mollymoo002/H5-Calendar
+- https://mollymoo002.github.io/H5-Calendar/
    ![screenshot of the calendar app](assets/images/screenshot.jpg)
 ## Credits
 - Ask BCS has been a huge help in this project
